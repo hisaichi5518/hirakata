@@ -14,7 +14,7 @@ public class Hirakata {
     }
 
     public static final class Builder {
-        private Map<View, Validator[]> validatorMap = new HashMap<>();
+        private Map<TextView, Validator[]> validatorMap = new HashMap<>();
 
         public Builder add(TextView textView, Validator... validator) {
             validatorMap.put(textView, validator);
