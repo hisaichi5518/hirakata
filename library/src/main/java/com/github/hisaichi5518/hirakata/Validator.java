@@ -1,6 +1,10 @@
 package com.github.hisaichi5518.hirakata;
 
 
+import android.widget.TextView;
+
+import io.reactivex.Observable;
+
 public class Validator {
     private final String message;
     private final ValidationBehavior validationBehavior;
@@ -8,6 +12,10 @@ public class Validator {
     public Validator(String message, ValidationBehavior validationBehavior) {
         this.message = message;
         this.validationBehavior = validationBehavior;
+    }
+
+    public Observable<ValidateResult> validate(TextView textView) {
+        return validationBehavior.behave(textView, message);
     }
 
     public static final class Builder {
