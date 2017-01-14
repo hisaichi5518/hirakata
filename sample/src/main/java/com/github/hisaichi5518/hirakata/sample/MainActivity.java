@@ -5,9 +5,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.widget.TextView;
 
 import com.github.hisaichi5518.hirakata.Hirakata;
-import com.github.hisaichi5518.hirakata.ValidateResult;
 import com.github.hisaichi5518.hirakata.Validator;
 import com.github.hisaichi5518.hirakata.sample.databinding.ActivityMainBinding;
 import com.github.hisaichi5518.hirakata.validationbehavior.EmailValidationBehavior;
@@ -49,13 +49,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void afterTextChanged(Editable s) {
 
-                hirakata.validate(binding.textInputEmail).subscribe(new Observer<ValidateResult>() {
+                hirakata.validate(binding.textInputEmail).subscribe(new Observer<TextView>() {
                     @Override
                     public void onSubscribe(Disposable d) {
                     }
 
                     @Override
-                    public void onNext(ValidateResult validateResult) {
+                    public void onNext(TextView textView) {
                         binding.textInputEmailLayout.setErrorEnabled(false);
                         binding.textInputEmailLayout.setError(null);
                     }

@@ -14,7 +14,7 @@ public class Validator {
         this.validationBehavior = validationBehavior;
     }
 
-    public Observable<ValidateResult> validate(TextView textView) {
+    public Observable<TextView> validate(TextView textView) {
         return validationBehavior.behave(textView, message);
     }
 

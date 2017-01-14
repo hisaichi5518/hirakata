@@ -17,10 +17,10 @@ public class Hirakata {
         this.validatorMap = validatorMap;
     }
 
-    public Observable<ValidateResult> validate(final TextView textView) {
-        return Observable.fromArray(validatorMap.get(textView)).flatMap(new Function<Validator, ObservableSource<ValidateResult>>() {
+    public Observable<TextView> validate(final TextView textView) {
+        return Observable.fromArray(validatorMap.get(textView)).flatMap(new Function<Validator, ObservableSource<TextView>>() {
             @Override
-            public ObservableSource<ValidateResult> apply(Validator validator) throws Exception {
+            public ObservableSource<TextView> apply(Validator validator) throws Exception {
                 return validator.validate(textView);
             }
         });

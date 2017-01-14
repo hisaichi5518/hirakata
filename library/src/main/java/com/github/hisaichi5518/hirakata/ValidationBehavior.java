@@ -5,5 +5,5 @@ import android.widget.TextView;
 import io.reactivex.Observable;
 
 public interface ValidationBehavior {
-    Observable<ValidateResult> behave(TextView textView, String message);
+    Observable<TextView> behave(TextView textView, String message);
 }
