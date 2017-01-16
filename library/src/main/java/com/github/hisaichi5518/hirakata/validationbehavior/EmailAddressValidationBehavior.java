@@ -27,7 +27,6 @@ public class EmailValidationBehavior implements ValidationBehavior {
                 } catch (Exception e) {
                     emitter.onError(e);
                 }
-
             }
         });
     }
